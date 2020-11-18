@@ -22,10 +22,10 @@ let db = new sqlite3.Database("./barang.db", sqlite3.OPEN_READWRITE, (err) => {
 });
 
 //root endpoint
-app.get("/", (res) => res.send("endpoint hit success"));
+app.get("/", (req, res) => res.send("endpoint hit success"));
 
 //get barang
-app.get("/api/barang", (req, res) => {
+app.get("/api/barang", (req, res, next) => {
   var query = "SELECT * FROM BARANG";
   var params = [];
   db.all(query, params, (err, rows) => {
