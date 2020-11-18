@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Testing Web Service</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Simple CRUD Operation</h1>
+            <form>
+                <p>Nama barang: <input id="input-nama" type="text"></p>
+                <p>Harga barang: <input id="input-harga" type="text"></p>
+                <button type="button" onclick="add_data()">Tambah Barang</button>
+            </form>
+            <div id="update-section" style="display: none;">
+                <form>
+                    <p>ID barang: <input disabled id="id-barang"></p>
+                    <p>Nama barang: <input id="update-nama" type="text"></p>
+                    <p>Harga barang: <input id="update-harga" type="text"></p>
+                    <button type="button" onclick="update_data()">Update</button>
+                    <button type="button" onclick="cancel_update()">Batal</button>
+                </form>
+                
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; justify-content: center;">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Barang</th>
+                        <th>Harga Barang</th>
+                    </tr>
+                </thead>
+                <tbody id="database-record">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="function.js"></script>
