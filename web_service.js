@@ -67,7 +67,7 @@ app.post("/api/tambahbarang", (req, res) => {
 });
 
 //update barang
-app.post("/api/updatebarang", (req, res) => {
+app.put("/api/updatebarang", (req, res) => {
   var data = {
     id: req.body.id,
     nama: req.body.nama,
@@ -92,7 +92,7 @@ app.post("/api/updatebarang", (req, res) => {
 });
 
 //delete barang
-app.post("/api/hapusbarang", (req, res) => {
+app.delete("/api/hapusbarang", (req, res) => {
   var id = req.body.id_barang;
   db.run("DELETE FROM barang WHERE id = " + id, function (err, result) {
     if (err) {

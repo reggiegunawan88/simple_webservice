@@ -62,7 +62,7 @@ function update_data() {
     harga: parseInt(document.getElementById("update-harga").value),
   };
   fetch("http://localhost:4000/api/updatebarang", {
-    method: "POST",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       accept: "application/json",
@@ -87,7 +87,7 @@ function delete_data() {
     table.rows[i].onclick = function () {
       data = { id_barang: this.cells[0].innerHTML };
       fetch("http://localhost:4000/api/hapusbarang", {
-        method: "POST",
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           accept: "application/json",
